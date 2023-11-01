@@ -15,9 +15,9 @@ function App() {
         <main className='mx-auto px-4 pb-12'>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
+            <Route path="/about" element={<About/>}/>
             <Route path='/notfound' element={<NotFound />} />
-            <Route path='/*' element={<NotFound />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
 
