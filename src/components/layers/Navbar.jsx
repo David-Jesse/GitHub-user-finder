@@ -18,7 +18,7 @@ function Navbar() {
                     <Link to='/' className='btn btn-ghost text-white btn-sm rouded-btn'>
                         Home
                     </Link>
-                    <Link to='/' className='btn text-white btn-ghost btn-sm rouded-btn'>
+                    <Link to='/about' className='btn text-white btn-ghost btn-sm rouded-btn'>
                         About
                     </Link>
                 </div>
