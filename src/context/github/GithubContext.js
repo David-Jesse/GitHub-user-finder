@@ -35,6 +35,9 @@ export const GithubProvider = ({children}) => {
        })
       }
 
+      // Function that clear the search result array
+      const clearUsers = () => dispatch({type: 'CLEAR_USERS'})
+
       // Function that sets the loading
       const setLoading = () => dispatch({type: 'SET_LOADING'})
     
@@ -42,6 +45,8 @@ export const GithubProvider = ({children}) => {
         users: state.users,
         loading: state.loading,
         searchUsers,
+        clearUsers,
+        
       }}>
         {children}
       </GithubContext.Provider>
