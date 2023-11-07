@@ -1,4 +1,4 @@
-import {FaCode, FaCodepen, FaStore, FaUserFriends, FaUsers} from 'react-icons/fa'
+import { FaCodepen, FaStore, FaUserFriends, FaUsers} from 'react-icons/fa'
 import GithubContext from "../context/github/GithubContext"
 import { useEffect, useContext } from "react"
 import RepoList from '../components/repos/RepoList';
@@ -7,7 +7,7 @@ import { useParams, Link } from "react-router-dom"
 
 
 function User() {
-    const {getUser, user, loading, getUserRepos} = useContext(GithubContext)
+    const {getUser, user, loading, getUserRepos, repos} = useContext(GithubContext)
 
     const params = useParams()
 
@@ -72,7 +72,7 @@ function User() {
                 </div>
               </h1>
               <p>{bio}</p>
-              <div className="mt-4 card-actio">
+              <div className="mt-4 card-action">
                   <a href={html_url} target='_blank' rel='noreferrer' className='btn btn-outline'>
                     Visit GitHub Profile
                   </a>
@@ -155,7 +155,8 @@ function User() {
             </div>
           </div>
         </div>
-        <RepoList repos={repos}/>
+
+        <RepoList repos={repos} />
       </div>
     </>
 

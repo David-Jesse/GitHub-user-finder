@@ -59,17 +59,16 @@ export const GithubProvider = ({children}) => {
         }
       }
 
-
-      // Function fetches User repos
+      // Function that fetches User repos
       const getUserRepos = async (login) => {
         setLoading()
 
         const params = new URLSearchParams({
           sort: 'created',
-          per_page: 10,
+          per_page: 10
         })
 
-        const response = await fetch(`${GITHUB_URL}/users?${login}/repos`, {
+        const response = await fetch(`${GITHUB_URL}/users?${login}/repos?${params}`, {
           headers: {
             Authorization: `token ${GITHUB_TOKEN}`,
           }
@@ -82,7 +81,6 @@ export const GithubProvider = ({children}) => {
         payload: data, 
        })
       }
-
 
       // Function that clear the search result array
       const clearUsers = () => dispatch({type: 'CLEAR_USERS'})
@@ -99,7 +97,6 @@ export const GithubProvider = ({children}) => {
         clearUsers,
         getUser,
         getUserRepos,
-        
       }}>
         {children}
       </GithubContext.Provider>
