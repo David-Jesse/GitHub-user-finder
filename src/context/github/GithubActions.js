@@ -5,6 +5,7 @@ console.log(GITHUB_URL)
 
 const github = axios.create ({
   baseURL: GITHUB_URL,
+  // Headers
   headers: { Authorization: `token ${GITHUB_TOKEN}` }
 })
 
